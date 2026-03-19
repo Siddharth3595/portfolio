@@ -1,0 +1,164 @@
+<div id="resizable" class="calcpage tabCar" style="font-size: 0.8em;">
+        
+    <div id="pnlTabControl">
+
+     
+<table class="layouttable fullwidth">
+<tbody><tr>
+    <td class="topleft">
+        <div id="mainpic">
+            
+            <img id="ctl05_imgPic" src="https://cdn-icons-png.flaticon.com/512/5782/5782311.png" alt="Calculate the carbon footprint for your cars">
+        </div>
+    </td>
+    <td class="topleft fullwidth">
+        <div class="carheading">
+            <h1>Car carbon footprint calculator</h1>
+        </div>
+        <p>You can enter details for up to 2 cars</p>
+        
+        
+        <div id="ctl05_valSummary" class="red" style=""><ul><li>Please enter your mileage</li>
+            <li>Please select your vehicle (or enter its efficiency)</li></ul></div>
+    </td>
+</tr>
+</tbody></table>
+<table class="gentable">
+<tbody><tr>
+    <td class="gencell"><span id="ctl05_lblMileage">Mileage:</span></td>
+    <td class="gencell"><table class="layouttable"><tbody><tr><td>
+
+
+
+<input name="ctl05$cdsCar$txtMileage" type="text" maxlength="7" id="ctl05_cdsCar_txtMileage" class="numberbox">
+<select name="ctl05$cdsCar$ddlMileageUnit" id="ctl05_cdsCar_ddlMileageUnit" class="mediumbox">
+    <option value="1.6093">miles</option>
+    <option selected="selected" value="1">km</option>
+
+</select>
+<span id="ctl05_cdsCar_rfvMileage" style="visibility: visible;">*</span>
+<span id="ctl05_cdsCar_rgvMileage" style="visibility:hidden;">*</span>
+</td></tr></tbody></table></td>
+</tr>
+<tr>
+    <td class="gencell"><span id="ctl05_lblVehicle">Choose vehicle:</span></td>
+    <td class="gencell"><table class="layouttable"><tbody><tr><td><div class="RadAjaxPanel" id="ctl05_ctl05_ddlCarCountryPanel" style="display: block;">
+    <select name="ctl05$ddlCarCountry" onchange="javascript:setTimeout('__doPostBack(\'ctl05$ddlCarCountry\',\'\')', 0)" id="ctl05_ddlCarCountry" class="dropbox">
+        <option value="Average">Average van, motorbike &amp; car database</option>
+        <option value="EU">EU car database</option>
+        <option selected="selected" value="India">India car database</option>
+        <option value="USA">USA car database</option>
+
+    </select>
+</div></td><td><noscript><input type="submit" name="ctl05$btnGo1" value="Go" id="ctl05_btnGo1" class="linkbutton" /></noscript></td></tr></tbody></table></td>
+</tr>
+<tr>
+    <td class="gencell">&nbsp;</td>
+    <td class="gencell"><table class="layouttable"><tbody><tr><td><div class="RadAjaxPanel" id="ctl05_ctl05_ddlCarYearPanel" style="display: block;">
+    <select name="ctl05$ddlCarYear" onchange="javascript:setTimeout('__doPostBack(\'ctl05$ddlCarYear\',\'\')', 0)" id="ctl05_ddlCarYear" class="dropbox">
+        <option selected="selected" value="2020">2020</option>
+
+    </select>
+</div></td><td><noscript><input type="submit" name="ctl05$btnGo2" value="Go" id="ctl05_btnGo2" class="linkbutton" /></noscript></td></tr></tbody></table></td>
+</tr>
+<tr>
+    <td class="gencell">&nbsp;</td>
+    <td class="gencell"><table class="layouttable"><tbody><tr><td><div class="RadAjaxPanel" id="ctl05_ctl05_ddlCarMakePanel" style="display: block;">
+    <select name="ctl05$ddlCarMake" onchange="javascript:setTimeout('__doPostBack(\'ctl05$ddlCarMake\',\'\')', 0)" id="ctl05_ddlCarMake" class="dropbox">
+        <option selected="selected" value=""> - select manufacturer - </option>
+        <option value="Ford India Pvt. Ltd.">Ford India Pvt. Ltd.</option>
+        <option value="Honda Cars India Ltd.">Honda Cars India Ltd.</option>
+        <option value="Hyundai Motor India Ltd.">Hyundai Motor India Ltd.</option>
+        <option value="Mahindra &amp; Mahindra Ltd.">Mahindra &amp; Mahindra Ltd.</option>
+        <option value="Maruti Suzuki India Ltd.">Maruti Suzuki India Ltd.</option>
+        <option value="Nissan Motor India Pvt. Ltd.">Nissan Motor India Pvt. Ltd.</option>
+        <option value="Renault India Pvt. Ltd.">Renault India Pvt. Ltd.</option>
+        <option value="Skoda Auto Volkswagen India Pvt. Ltd.">Skoda Auto Volkswagen India Pvt. Ltd.</option>
+        <option value="Tata Motors Ltd.">Tata Motors Ltd.</option>
+        <option value="Toyota Kirloskar Motor Pvt. Ltd.">Toyota Kirloskar Motor Pvt. Ltd.</option>
+
+    </select>
+</div></td><td><noscript><input type="submit" name="ctl05$btnGo3" value="Go" id="ctl05_btnGo3" class="linkbutton" /></noscript></td></tr></tbody></table></td>
+</tr>
+<tr>
+    <td class="gencellright"><div class="RadAjaxPanel" id="ctl05_ctl05_btnClearPanel" style="display: block;">
+
+</div></td>
+    <td class="gencell"><table class="layouttable"><tbody><tr><td><div class="RadAjaxPanel" id="ctl05_ctl05_ddlCarModelPanel" style="display: block;">
+    <select name="ctl05$ddlCarModel" onchange="javascript:setTimeout('__doPostBack(\'ctl05$ddlCarModel\',\'\')', 0)" id="ctl05_ddlCarModel" class="dropbox">
+
+    </select>
+</div></td><td><noscript><input type="submit" name="ctl05$btnGo4" value="Go" id="ctl05_btnGo4" class="linkbutton" /></noscript></td></tr></tbody></table></td>
+</tr>
+<tr>
+    <td class="gencell">&nbsp;</td>
+    <td class="gencell"><table class="layouttable"><tbody><tr><td><div class="RadAjaxPanel" id="ctl05_ctl05_ddlCarDerivativePanel" style="display: block;">
+    <select name="ctl05$ddlCarDerivative" onchange="javascript:setTimeout('__doPostBack(\'ctl05$ddlCarDerivative\',\'\')', 0)" id="ctl05_ddlCarDerivative" class="dropbox">
+
+    </select>
+</div></td><td><noscript><input type="submit" name="ctl05$btnGo5" value="Go" id="ctl05_btnGo5" class="linkbutton" /></noscript></td></tr></tbody></table></td>
+</tr>
+<tr>
+    <td class="gencell"><span id="ctl05_lblEfficiency">Or enter efficiency:</span></td>
+    <td class="gencell"><table class="layouttable"><tbody><tr><td><div class="RadAjaxPanel" id="ctl05_ctl05_cefCarPanel" style="display: block;">
+    <input name="ctl05$cefCar$txtEfficiency" type="text" maxlength="7" id="ctl05_cefCar_txtEfficiency" class="numberbox">
+<input type="hidden" name="ctl05$cefCar$hidUseUplift" id="ctl05_cefCar_hidUseUplift" value="True">
+<select name="ctl05$cefCar$ddlEfficiencyUnit" id="ctl05_cefCar_ddlEfficiencyUnit" class="mediumbox">
+        <option selected="selected" value="1">g/km</option>
+        <option value="10">L/100km</option>
+        <option value="-2824.9">mpg (UK)</option>
+        <option value="-2352.2">mpg (US)</option>
+
+    </select>
+<select name="ctl05$cefCar$ddlFuel" id="ctl05_cefCar_ddlFuel" class="mediumbox">
+        <option selected="selected" value="2.09747">petrol</option>
+        <option value="2.51206">diesel</option>
+        <option value="1.55713">LPG</option>
+        <option value="0.44845">CNG</option>
+
+    </select>
+<span id="ctl05_cefCar_rfvEfficiency" style="visibility: visible;">*</span>
+<span id="ctl05_cefCar_rgvEfficiency" style="visibility:hidden;">*</span>
+</div></td></tr></tbody></table></td>
+</tr>
+</tbody></table>
+<div class="calcbutton"><input type="submit" name="ctl05$btnAddCar" value="Calculate &amp; Add To Footprint" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl05$btnAddCar&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl05_btnAddCar" class="cfp"></div>
+
+<div id="ctl05_RadAjaxManager1SU" style="display: none;">
+    <span id="ctl05_RadAjaxManager1" style="display:none;"></span>
+</div>
+
+    
+</div>
+    <div id="pnlTabSummary">
+
+        <p class="error"><span id="lblMaxReached"></span></p>
+        <table class="offsetlink">
+            <tbody><tr>
+                <td class="offsetlinkcell"><h3 class="nomargin"><span id="lblTabTotal">Total Car Footprint = 0.01 metric tons of CO<span class="co2">2</span>e</span></h3></td>
+                <td class="offsetlinkcell nowrapping"><a id="hylTabOffset" class="buttonlinklight" href="https://www.carbonfootprint.com/offset.aspx?o=0.008&amp;om=0.008&amp;r=CalcCar&amp;defra=true" target="_top">Offset Now</a></td>
+            </tr>
+        </tbody></table>
+        
+        <div>
+    <table class="footprints" cellspacing="2" cellpadding="2" id="grvFootprint" style="border-style:None;">
+        <tbody><tr>
+            <td align="right" style="border-width:0px;white-space:nowrap;">0.01 metric tons:</td><td align="left" style="border-width:0px;">45 km in a India 2020 Honda Cars India Ltd. CITY 1.5 SV CVT (i-VTEC) &amp; Its Variants</td><td style="border-width:0px;">
+                        <input type="submit" name="grvFootprint$ctl02$btnRemove" value="[remove]" id="grvFootprint_btnRemove_0" class="linkbutton">
+                    </td>
+        </tr>
+    </tbody></table>
+</div>
+    
+</div>
+    
+    <table class="layouttable fullwidth">
+        <tbody><tr>
+            <td class="leftbutton"><a id="hylPreviousTab" class="buttonlink" href="calculator.aspx?c=Full&amp;tab=3&amp;h=bb84745d8f965c866decfbb149edebba">&lt; Flights</a></td>
+            <td class="middlebutton">
+                
+            </td>
+            <td class="rightbutton"><a id="btnNextTab" class="buttonlink" href="calculator.aspx?c=Full&amp;tab=5&amp;h=bb84745d8f965c866decfbb149edebba">Motorbike &gt;</a></td>
+        </tr>
+    </tbody></table>
+</div>

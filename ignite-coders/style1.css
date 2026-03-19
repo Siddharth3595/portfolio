@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("https://static.vecteezy.com/system/resources/previews/022/084/877/non_2x/underground-car-parking-area-generative-ai-free-photo.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: 'roboto',sans-serif;
+}
+.container{
+    position: relative;
+    width: 90%;
+    height: 87vh;
+    border: 5px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.info{
+    font-size: 100px;
+    color: #fff;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+.form{
+    width: 400px;
+    height: auto;
+    color: #9c7676;
+    font-family: 'roboto', sans-serif;
+}
+.info{
+   text-transform: capitalize;
+    text-align: center;
+    font-size: 88px;
+    font-weight: 600;
+    margin-bottom: 50px;
+
+
+}
+input{
+    width: 80%;
+    height: 35px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+    background: rgb(215, 249, 151);
+    border: none;
+    color: #fff;
+    padding: 15px;
+    transition: 0.5s;
+    text-transform: capitalize;
+
+}
+input::placeholder{
+    color: rgb(107, 106, 106);
+}
+input:focus{
+    background: rgb(215, 249, 151);
+    color: black;
+
+}
+input:focus::placeholder{
+    color: black;
+}
+#owner{
+    color: #fff;
+    font-size: 30px;
+}
+#type{
+    color: #fff;
+    font-size: 30px;
+}
+#model{
+    color: #fff;
+    font-size: 30px;
+}
+#registration{
+    color: #fff;
+    font-size: 30px;
+}
+#plate{
+    color: #fff;
+    font-size: 30px;
+}
+#submit{
+    color:black;
+    background-color: rgb(238, 237, 241);
+}
+#car_pol{
+    text-align: right;
+    color: black;
+}

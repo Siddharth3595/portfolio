@@ -1,0 +1,13 @@
+h1{
+    color: rgb(170, 29, 29);
+    font-weight: bold;
+}
+h2{
+    color: black;
+    font-weight: 300;
+    font-weight: 'roboto', sans serif;
+}
+body{
+    background: url("https://img.freepik.com/premium-photo/business-meeting_53876-91042.jpg");
+    background-size: cover;
+}
