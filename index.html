@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siddharth Kumar portfolio</title>
+  <!-- Google Fonts & FontAwesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ==== GLOBAL STYLES ==== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0a0c0f;
+      color: #e0e4e8;
+      line-height: 1.6;
+    }
+
+    :root {
+      --bg-primary: #0a0c0f;
+      --bg-secondary: #13171c;
+      --card-bg: #1e2329;
+      --border-glow: #2b3139;
+      --accent: #6366f1;
+      --accent-glow: #818cf8;
+      --text-light: #f0f4fa;
+      --text-muted: #9aa5b5;
+      --gradient-btn: linear-gradient(135deg, #4f46e5, #7c3aed);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.02);
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 40px;
+      letter-spacing: -0.02em;
+      background: linear-gradient(to right, #ffffff, #b3c7ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      background: var(--card-bg);
+      color: var(--text-light);
+      border: 1px solid #333a44;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-gradient {
+      background: var(--gradient-btn);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: white;
+    }
+
+    .btn-gradient:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px -8px #4f46e5;
+    }
+
+    .btn-outline:hover {
+      background: #2b3139;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* ========== HERO ========= */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-left h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      background: linear-gradient(145deg, #fff, #b1c3ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+
+    .hero-left .role {
+      font-size: 1.3rem;
+      color: var(--accent-glow);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .hero-left .tagline {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 450px;
+      margin-bottom: 32px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .profile-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-circle {
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #2d3748, #1a202c);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 0 4px #2f3742, 0 0 0 8px rgba(99,102,241,0.2), 0 25px 40px -12px #000;
+      transition: 0.3s ease;
+    }
+
+    .profile-circle:hover {
+      box-shadow: 0 0 0 4px #4f46e5, 0 0 0 12px rgba(99,102,241,0.4), 0 30px 50px #000;
+      transform: scale(1.02);
+    }
+
+    .profile-circle img {
+      width: 94%;
+      height: 94%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #0f1217;
+    }
+
+    /* ========== ABOUT ========= */
+    .about-text {
+      background: var(--bg-secondary);
+      padding: 32px 40px;
+      border-radius: 48px;
+      font-size: 1.2rem;
+      border-left: 6px solid var(--accent);
+      box-shadow: 0 20px 30px -10px #000;
+    }
+
+    /* ========== SKILLS ========= */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+    }
+
+    .skill-card {
+      background: var(--card-bg);
+      border-radius: 32px;
+      padding: 28px 20px;
+      transition: 0.2s ease;
+      border: 1px solid #2b313a;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 30px -15px #6366f1;
+    }
+
+    .skill-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: var(--accent-glow);
+      border-bottom: 2px solid #2d3748;
+      padding-bottom: 10px;
+    }
+
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill-tag {
+      background: #1f2a36;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #cfdeff;
+    }
+
+    /* ========== PROJECTS (with images) ========= */
+    .project-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 32px;
+    }
+
+    .project-item {
+      background: var(--card-bg);
+      border-radius: 36px;
+      padding: 24px 24px 30px;
+      border: 1px solid #2b323c;
+      transition: all 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-item:hover {
+      transform: scale(1.02);
+      border-color: var(--accent);
+      box-shadow: 0 25px 30px -15px #3b3f8c;
+    }
+
+    .project-img {
+      width: 100%;
+      height: 200px;
+      border-radius: 24px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      background: #1a202c;
+      border: 1px solid #2f3844;
+      transition: 0.2s;
+    }
+
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .project-item:hover .project-img img {
+      transform: scale(1.06);
+    }
+
+    .project-item h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .project-item .desc {
+      color: var(--text-muted);
+      margin: 10px 0 16px;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin: 10px 0 20px;
+    }
+
+    .feature-list li {
+      margin: 8px 0;
+      font-size: 0.95rem;
+    }
+
+    .feature-list i {
+      color: #34d399;
+      margin-right: 10px;
+    }
+
+    .tech-stack {
+      margin: 16px 0 20px;
+      font-size: 0.95rem;
+      color: var(--accent-glow);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 16px;
+      margin-top: auto;
+    }
+
+    .project-links a {
+      color: white;
+      background: #262f3b;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    .project-links a:hover {
+      background: var(--accent);
+    }
+
+    /* ========== OTHER SECTIONS ========= */
+    .intern-card {
+      background: var(--bg-secondary);
+      border-radius: 40px;
+      padding: 36px;
+    }
+
+    /* ----- CERTIFICATIONS SECTION (updated with clickable cards) ----- */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .cert-item {
+      background: #1e2630;
+      padding: 28px 24px;
+      border-radius: 28px;
+      border: 1px solid #2f3844;
+      font-weight: 500;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cert-item:hover {
+      border-color: var(--accent);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -10px #4f46e5;
+      background: #242e3a;
+    }
+
+    .cert-item i {
+      color: var(--accent);
+      margin-right: 12px;
+      font-size: 1.4rem;
+      width: 32px;
+    }
+
+    .cert-item .cert-title {
+      font-size: 1.2rem;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .cert-item .cert-icon {
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+
+    .cert-item:hover .cert-icon {
+      transform: scale(1.1);
+    }
+
+    /* optional "view" hint */
+    .cert-item::after {
+      content: "↗";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: opacity 0.2s, right 0.2s;
+      font-size: 1.5rem;
+      color: var(--accent-glow);
+    }
+
+    .cert-item:hover::after {
+      opacity: 1;
+      right: 16px;
+    }
+
+    .achievement-block {
+      background: linear-gradient(145deg, #141b24, #0f151d);
+      border-radius: 48px;
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    .coding-stats span {
+      display: inline-block;
+      background: #2d3748;
+      padding: 10px 24px;
+      border-radius: 60px;
+      margin: 8px 8px 0 0;
+    }
+
+    .edu-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .edu-item {
+      background: var(--card-bg);
+      padding: 28px 32px;
+      border-radius: 50px;
+      border-left: 6px solid var(--accent);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .contact-info i {
+      width: 36px;
+      color: var(--accent);
+    }
+
+    .contact-info p {
+      margin: 20px 0;
+      font-size: 1.2rem;
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 16px 20px;
+      margin: 10px 0;
+      background: #1f262e;
+      border: 1px solid #323c48;
+      border-radius: 40px;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      padding: 16px 40px;
+      background: var(--gradient-btn);
+      border: none;
+      border-radius: 60px;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .btn-group { justify-content: center; }
+      .profile-circle { width: 280px; height: 280px; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <h2> Hi, I'M <br></h2>
+        <h1>Siddharth Kumar</h1>
+        <div class="role">B.Tech CSE Student | Cloud Engineer </div>
+        <p class="tagline">Passionate about building real-world applications and learning modern software and cloud technologies.</p>
+        <div class="btn-group">
+          <a href="#projects" class="btn btn-gradient"><i class="fas fa-code"></i> Projects</a>
+          <a href="#skills" class="btn btn-outline"><i class="fas fa-cog"></i> Skills</a>
+          <a href="#certifications" class="btn btn-outline"><i class="fas fa-certificate"></i> Certifications</a>
+          <a href="#achievements" class="btn btn-outline"><i class="fas fa-trophy"></i> Achievements</a>
+          <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
+          <a href="sidd-resume-updated.pdf" target="_blank" class="btn btn-outline" id="resumeBtn">
+    <i class="fas fa-download"></i> Resume
+</a>
+        </div>
+      </div>
+      <div class="profile-wrapper">
+        <div class="profile-circle">
+          <img src="image/sidd-formal-2.jpg" alt="Siddharth Kumar" id="profileImg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2>👨‍💻 About Me</h2>
+      <div class="about-text">
+        I am a Computer Science undergraduate at Lovely Professional University with a strong interest in software development, cloud computing, and problem solving. I enjoy building practical and scalable applications that address real-world problems while continuously improving my technical abilities.
+
+Through hands-on projects and continuous learning, I have developed a solid foundation in programming and core computer science concepts such as Data Structures, Operating Systems, DBMS, and Computer Networks. I have experience working with technologies like C++, Python, JavaScript, and cloud platforms such as AWS, and I enjoy exploring modern tools that enhance software development and deployment.
+
+I strongly believe in learning by building, which is why I actively work on projects and regularly practice coding to strengthen my problem-solving skills. My goal is to grow as a software developer and cloud professional, contribute to impactful solutions, and continuously expand my knowledge in emerging technologies.      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <h2>⚙️ Skills & Tools</h2>
+      <div class="skills-grid">
+        <div class="skill-card"><h3>Languages</h3><div class="skill-items"><span class="skill-tag">C++</span><span class="skill-tag">Python</span><span class="skill-tag">JavaScript</span></div></div>
+        <div class="skill-card"><h3>Tools/Platforms</h3><div class="skill-items"><span class="skill-tag">Linux</span><span class="skill-tag">AWS</span><span class="skill-tag">Apache</span><span class="skill-tag">Docker</span></div></div>
+        <div class="skill-card"><h3>Core CS</h3><div class="skill-items"><span class="skill-tag">DBMS</span><span class="skill-tag">SQL</span><span class="skill-tag">Operating Systems</span><span class="skill-tag">Computer Networks</span><span class="skill-tag">OOP</span></div></div>
+        <div class="skill-card"><h3>Soft Skills</h3><div class="skill-items"><span class="skill-tag">Problem Solving</span><span class="skill-tag">Team Player</span><span class="skill-tag">Adaptability</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS with images -->
+  <section id="projects">
+    <div class="container">
+      <h2>📌 Projects</h2>
+      <div class="project-cards">
+        <!-- Project 1: Expense Tracker -->
+        <div class="project-item">
+          <div class="project-img">
+            <!-- project image placeholder (expense tracker theme) -->
+            <img src="https://c8.alamy.com/comp/2JFJ895/financial-planning-app-for-earnings-and-expenses-control-budget-planning-cost-optimization-budget-management-in-mobile-app-synchroniz-computer-vector-2JFJ895.jpg" alt="Expense Tracker preview">
+          </div>
+          <h3>Expense Tracker</h3>
+          <p class="desc">A responsive web application that helps users record and monitor daily expenses and improve personal financial management.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle"></i> Add and categorize expenses</li>
+            <li><i class="fas fa-check-circle"></i> Track spending</li>
+            <li><i class="fas fa-check-circle"></i> User friendly interface</li>
+          </ul>
+          <div class="tech-stack"><strong>Tech:</strong> HTML, CSS, JavaScript, AWS</div>
+          <div class="project-links">
+            <a href="https://github.com/Siddharth3595/Expense-tracker"><i class="fab fa-github"></i> GitHub</a>
+            <a href="expense-tracker/index.html"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+        <!-- Project 2: Smart Car Parking System -->
+        <div class="project-item">
+          <div class="project-img">
+            <img src="https://thumbs.dreamstime.com/b/smart-parking-management-system-abstract-concept-vector-illustration-set-entry-station-bay-indicator-guidance-cars-316894345.jpg" alt="Smart Car Parking preview">
+          </div>
+          <h3>Smart Car Parking System</h3>
+          <p class="desc">A smart parking system that allows users to prebook parking slots and reduce congestion.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle"></i> Parking slot booking</li>
+            <li><i class="fas fa-check-circle"></i> GPS based parking detection</li>
+            <li><i class="fas fa-check-circle"></i> Navigation to nearest parking</li>
+          </ul>
+          <div class="tech-stack"><strong>Tech:</strong> HTML, CSS, JS, Node.js, MySQL/Firebase</div>
+          <div class="project-links">
+            <a href="https://github.com/Siddharth3595/Ignite-Coders"><i class="fab fa-github"></i> GitHub</a>
+            <a href="ignite-coders/hackathon2.html"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNSHIP -->
+  <section id="internship">
+    <div class="container">
+      <h2>📚 Internship / Training</h2>
+      <div class="intern-card">
+        <h3 style="color:#a5b4fc;">Data Structure and Algorithm Training – Lovely Professional University</h3>
+        <ul style="margin-top:20px; list-style:none;">
+          <li><i class="fas fa-caret-right" style="color:var(--accent); margin-right:15px;"></i> Built a Tic Tac Toe game</li>
+          <li><i class="fas fa-caret-right" style="color:var(--accent); margin-right:15px;"></i> Implemented arrays and stacks</li>
+          <li><i class="fas fa-caret-right" style="color:var(--accent); margin-right:15px;"></i> Strengthened problem solving and DSA concepts</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS SECTION - UPDATED WITH YOUR CERTIFICATES (clickable cards) -->
+  <section id="certifications">
+    <div class="container">
+      <h2>📜 Certifications</h2>
+      <div class="cert-grid">
+        <!-- Social Networks II – NPTEL (replace # with actual PDF path) -->
+        <a href="image/nptel-sidd.jpeg" class="cert-item" target="_blank">
+          <i class="fas fa-award cert-icon"></i>
+          <span class="cert-title">Social Networks IIT ROPAR – NPTEL</span>
+        </a>
+        <!-- Data Structures and Algorithms – LPU -->
+        <a href="image/DSA-LPU-certificate.pdf" class="cert-item" target="_blank">
+          <i class="fas fa-award cert-icon"></i>
+          <span class="cert-title">Data Structures and Algorithms – LPU</span>
+        </a>
+        <!-- Computer Networking – Google -->
+        <a href="image/AWS_Academy_Graduate___Cloud_Architecting___Training_Badge_Badge20260224-33-txoona.pdf" class="cert-item" target="_blank">
+          <i class="fas fa-award cert-icon"></i>
+          <span class="cert-title">AWS Academy Graduate – Cloud Architecting – Training</span>
+        </a>
+        <!-- You can easily add more certificates following the same pattern -->
+        <!-- <a href="certificates/aws-essentials.pdf" class="cert-item" target="_blank">
+          <i class="fas fa-award cert-icon"></i>
+          <span class="cert-title">AWS Cloud Essentials – Amazon</span>
+        </a> -->
+      </div>
+      <!-- Optional: note that files are placeholders – you can adjust paths -->
+      <p style="text-align: center; margin-top: 20px; color: var(--text-muted); font-size: 0.9rem;">
+        <i class="fas fa-info-circle"></i> Each certificate opens as PDF (paths like certificates/...). Replace with your actual file paths.
+      </p>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <div class="container">
+      <h2>🏆 Achievements</h2>
+      <div class="achievement-block">
+        <div style="flex:1">
+          <p style="font-size: 1.5rem;">✅ Solved <strong>100+ coding problems</strong> across platforms</p>
+          <div class="coding-stats" style="margin-top: 30px;">
+            <span><i class="fab fa-leetcode"></i> LeetCode</span>
+            <span><i class="fas fa-code"></i> GeeksforGeeks</span>
+            <span><i class="fab fa-hackerrank"></i> HackerRank</span>
+          </div>
+        </div>
+        <div style="flex:1">
+  <!--yahan stars ayega-->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+      <h2>🎓 Education</h2>
+      <div class="edu-timeline">
+        <div class="edu-item"><h3>Lovely Professional University</h3><div class="meta">B.Tech Computer Science Engineering (2023 – Present)</div></div>
+        <div class="edu-item"><h3>Ram Jangal Singh Jr. College</h3><div class="meta">Intermediate – 72%</div></div>
+        <div class="edu-item"><h3>SNBP International School</h3><div class="meta">Matriculation – 60%</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2>📬 Contact Me</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p><i class="fas fa-envelope"></i> sosiddharth7@gmail.com</p>
+          <p><i class="fab fa-linkedin"></i> linkedin.com/in/siddharthkumar707/</p>
+          <p><i class="fab fa-github"></i> https://github.com/Siddharth3595</p>
+          <p><i class="fas fa-phone-alt"></i> +91 9693553595</p>
+        </div>
+        <div class="contact-form">
+          <form id="simpleForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea rows="4" placeholder="Your message..."></textarea>
+            <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p></p>
+  </footer>
+
+  <!-- JavaScript (same as before) -->
+  <script>
+    (function() {
+      // smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === "#") return;
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      // contact form demo
+      const form = document.getElementById('simpleForm');
+      if(form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          alert('📨 Demo: message sent! (portfolio contact form)');
+          form.reset();
+        });
+      }
+
+      // resume download placeholder
+     document.getElementById('resumeBtn')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  
+  const link = document.createElement('a');
+  link.href = 'sidd-resume-updated.pdf';   // your file name
+  link.download = 'Siddharth_Resume.pdf'; // download name
+  link.click();
+});
+
+      // profile image fallback
+      const profileImg = document.getElementById('profileImg');
+      if(profileImg) {
+        profileImg.onerror = function() {
+          this.onerror = null;
+          this.src = 'https://ui-avatars.com/api/?name=Siddharth+K&size=340&background=4f46e5&color=fff&bold=true&length=2';
+        };
+      }
+    })();
+  </script>
+</body>
+</html>
