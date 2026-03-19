@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>personal expense · tracker</title>
+  <!-- Chart.js CDN (lightweight) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <!-- stylesheet linked (no inline CSS) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+  <div class="app-wrapper">
+    <!-- header with theme toggle & clear all -->
+    <header class="dashboard-header">
+      <h1>📊 expense tracker</h1>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="switch theme">🌙 dark</button>
+        <button class="btn clear-all" id="clearAllBtn">🗑️ clear all</button>
+      </div>
+    </header>
+
+    <!-- summary cards (balance, income, expense) -->
+    <section class="summary-cards">
+      <div class="card balance-card">
+        <span class="card-label">total balance</span>
+        <span class="card-value" id="totalBalance">$0.00</span>
+      </div>
+      <div class="card income-card">
+        <span class="card-label">total income</span>
+        <span class="card-value" id="totalIncome">$0.00</span>
+      </div>
+      <div class="card expense-card">
+        <span class="card-label">total expenses</span>
+        <span class="card-value" id="totalExpense">$0.00</span>
+      </div>
+    </section>
+
+    <!-- chart + filter row (aligned, no overlap) -->
+    <section class="chart-filter-row">
+      <div class="chart-container">
+        <canvas id="categoryChart" width="300" height="300"></canvas>
+      </div>
+      <div class="filter-controls">
+        <input type="text" id="searchInput" placeholder="🔍 search by title" class="filter-input">
+        <select id="categoryFilter" class="filter-select">
+          <option value="all">all categories</option>
+          <option value="Food">Food</option>
+          <option value="Travel">Travel</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Bills">Bills</option>
+          <option value="Other">Other</option>
+        </select>
+        <button class="btn add-btn" id="openAddModal">➕ add transaction</button>
+      </div>
+    </section>
+
+    <!-- monthly summary mini card (bonus) -->
+    <section class="monthly-summary">
+      <span>📅 monthly summary</span>
+      <span id="monthlyEarning">$0.00</span> income · 
+      <span id="monthlySpending">$0.00</span> expense
+    </section>
+
+    <!-- transactions table (clean, scrollable) -->
+    <section class="table-wrapper">
+      <table class="transaction-table">
+        <thead>
+          <tr>
+            <th>title</th><th>amount</th><th>category</th><th>date</th><th>type</th><th>actions</th>
+          </tr>
+        </thead>
+        <tbody id="transactionBody"></tbody>
+      </table>
+    </section>
+
+    <!-- overlay + modals (edit modal + delete confirmation) -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <!-- ADD/EDIT MODAL (same form used for both) -->
+    <div class="modal" id="transactionModal">
+      <h2 id="modalTitle">add transaction</h2>
+      <form id="transactionForm" novalidate>
+        <input type="hidden" id="editId" value="">
+        <div class="form-group">
+          <label>title *</label>
+          <input type="text" id="titleInput" placeholder="e.g. grocery">
+          <div class="error-msg" id="titleError"></div>
+        </div>
+        <div class="form-group">
+          <label>amount ($) *</label>
+          <input type="number" id="amountInput" step="0.01" min="0.01" placeholder="0.00">
+          <div class="error-msg" id="amountError"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>category *</label>
+            <select id="categorySelect">
+              <option value="Food">Food</option><option value="Travel">Travel</option>
+              <option value="Shopping">Shopping</option><option value="Bills">Bills</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>type *</label>
+            <select id="typeSelect">
+              <option value="income">Income</option><option value="expense">Expense</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>date *</label>
+          <input type="date" id="dateInput">
+          <div class="error-msg" id="dateError"></div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn cancel-btn" id="closeModal">cancel</button>
+          <button type="submit" class="btn save-btn" id="saveBtn">save</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- DELETE CONFIRMATION MODAL (small) -->
+    <div class="modal delete-modal" id="deleteModal">
+      <p>delete transaction?</p>
+      <p class="delete-warning">this action cannot be undone.</p>
+      <div class="modal-actions">
+        <button class="btn cancel-btn" id="cancelDelete">cancel</button>
+        <button class="btn delete-confirm" id="confirmDelete">delete</button>
+      </div>
+    </div>
+
+    <!-- toast container (notifications) -->
+    <div class="toast-container" id="toastContainer"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+/* style.css – clean, stable, card-based, responsive */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+body {
+  background-color: #f4f6f9;
+  color: #1e293b;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1.5rem;
+}
+
+body.dark-mode {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+.app-wrapper {
+  max-width: 1280px;
+  width: 100%;
+}
+
+/* cards */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.card {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e9eef2;
+}
+
+.dark-mode .card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.card-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+}
+
+.dark-mode .card-label {
+  color: #94a3b8;
+}
+
+.card-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-top: 0.3rem;
+}
+
+/* header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.theme-toggle, .btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 3rem;
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: white;
+  border: 1px solid #d1d9e6;
+  color: #1e293b;
+}
+
+.dark-mode .theme-toggle, .dark-mode .btn {
+  background: #334155;
+  border-color: #475569;
+  color: #f1f5f9;
+}
+
+.clear-all {
+  background: #fee2e2;
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+
+.dark-mode .clear-all {
+  background: #451a1a;
+  border-color: #7f1d1d;
+  color: #fecaca;
+}
+
+/* chart + filter row */
+.chart-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  margin: 2rem 0 1rem;
+}
+
+.chart-container {
+  width: 200px;
+  height: 200px;
+  background: white;
+  border-radius: 2rem;
+  padding: 0.8rem;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+  border: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.dark-mode .chart-container {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.filter-controls {
+  display: flex;
+  flex: 2;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.filter-input, .filter-select {
+  padding: 0.7rem 1rem;
+  border-radius: 3rem;
+  border: 1px solid #cbd5e1;
+  background: white;
+  min-width: 160px;
+  flex: 1 1 160px;
+}
+
+.dark-mode .filter-input, .dark-mode .filter-select {
+  background: #1e293b;
+  border-color: #475569;
+  color: #f1f5f9;
+}
+
+.add-btn {
+  background: #3b82f6;
+  color: white !important;
+  border: none;
+  flex: 0 0 auto;
+}
+
+/* monthly summary */
+.monthly-summary {
+  background: white;
+  border-radius: 2rem;
+  padding: 0.7rem 1.5rem;
+  margin: 1rem 0 1.5rem;
+  border: 1px solid #e2e8f0;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.dark-mode .monthly-summary {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+/* table */
+.table-wrapper {
+  background: white;
+  border-radius: 2rem;
+  padding: 1rem 0.5rem 0.5rem 0.5rem;
+  border: 1px solid #e2e8f0;
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.dark-mode .table-wrapper {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.transaction-table th {
+  text-align: left;
+  padding: 1rem 0.5rem 0.8rem 0.5rem;
+  color: #64748b;
+  font-weight: 600;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.dark-mode th {
+  border-color: #334155;
+  color: #94a3b8;
+}
+
+.transaction-table td {
+  padding: 0.9rem 0.5rem;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.dark-mode td {
+  border-color: #334155;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  border-radius: 2rem;
+}
+
+.edit-btn { color: #2563eb; }
+.delete-btn { color: #dc2626; }
+
+/* modal overlay & modals */
+.modal-overlay {
+  position: fixed;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1000;
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 2rem;
+  padding: 2rem 2rem 1.8rem;
+  width: 90%;
+  max-width: 450px;
+  z-index: 1010;
+  display: none;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+  border: 1px solid #e9eef2;
+}
+
+.dark-mode .modal {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.delete-modal {
+  max-width: 350px;
+  text-align: center;
+}
+
+.delete-warning {
+  color: #b91c1c;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 2rem;
+  border: 1px solid #cbd5e1;
+  background: white;
+}
+
+.dark-mode input, .dark-mode select {
+  background: #0f172a;
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
+.error-msg {
+  color: #dc2626;
+  font-size: 0.75rem;
+  margin-top: 0.2rem;
+  min-height: 1rem;
+}
+
+/* toast */
+.toast-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.toast {
+  background: #1e293b;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 3rem;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2);
+  font-weight: 500;
+  animation: slideIn 0.2s;
+}
+
+.dark-mode .toast {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* mobile */
+@media (max-width: 640px) {
+  .summary-cards { grid-template-columns: 1fr; gap: 0.8rem; }
+  .chart-filter-row { flex-direction: column; align-items: stretch; }
+  .chart-container { align-self: center; }
+  .modal { padding: 1.5rem; width: 95%; }
+}
